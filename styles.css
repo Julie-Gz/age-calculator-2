@@ -1,0 +1,213 @@
+/* Styles */
+:root{
+    /* Primary */
+    --Purple: hsl(259, 100%, 65%);
+    --DarkPurple: hsl(259, 99%, 58%);
+    --LightRed: hsl(0, 100%, 67%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --OffWhite: hsl(0, 0%, 94%);
+    --LightGrey: hsl(0, 0%, 86%);
+    --SmokeyGrey: hsl(0, 1%, 44%);
+    --OffBlack: hsl(0, 0%, 8%);
+
+    /* Font Size */
+    --LabelFS: 0.9rem;
+    --InputFS: 1.2rem;
+    --InputLFS: 1.5rem;
+    --errorFS: 0.7rem;
+    --OutputFSsm: 2.5rem;
+    --OutputFSmd: 4.5rem;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "poppinsBoldItalic";
+    src: url("assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsBold";
+    src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsRegular";
+    src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "poppinsItalic";
+    src: url("assets/fonts/Poppins-Italic.ttf") format("truetype");
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--LightGrey);
+}
+
+main{
+    background-color: var(--White);
+    width: 90%;
+    max-width: 600px; 
+    padding: 2.5em 1em;
+    margin: 0 1em 1em;
+    border-radius: 10px 10px 80px 10px;
+}
+
+button, input{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Form */
+.container{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+label,::placeholder{
+    color: var(--SmokeyGrey);
+}
+
+label{
+    display: block;
+    font-size: var(--LabelFS);
+    font-family: "poppinsRegular";
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.4em;
+}
+
+input{
+    display: inline-block;
+    font-size: var(--InputFS);
+    font-family: "poppinsBold";
+    color: var(--OffBlack);
+    border: 1px solid var(--LightGrey);
+    border-radius: 10px;
+    padding: 0.3em 0.5em;
+    width: 100%;
+}
+
+input:focus{
+    border-color: var(--Purple);
+}
+
+/* Invalid styles */
+.form-field-container.invalid input{
+    border-color: var(--LightRed);
+}
+
+.form-field-container.invalid label, small{
+    color: var(--LightRed);
+}
+
+small{
+    font-family: "poppinsItalic";
+}
+
+/* Divider */
+.divider{
+    position: relative;
+    padding: 3em 0;
+}
+
+button{
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Purple);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover{
+    background: var(--OffBlack);
+}
+
+img{
+    display: inline-block;
+    max-width: 100%;
+    width: 45%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Age Display */
+.display-age{
+    font-size: var(--OutputFSsm);
+    font-family: "poppinsBoldItalic";
+}
+
+.calculated-age{
+    color: var(--Purple);
+}
+
+/* Attribution */
+.attribution { 
+    text-align: center; 
+}
+
+.attribution p{
+    font-size: 11px;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Media Query */
+@media screen and (min-width: 769px) {
+    main{
+        border-radius: 20px 20px 120px 20px;
+        padding: 2.5em;
+    }
+
+    .container{
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .form-field-container{
+        width: 20%;
+    }
+
+    input{
+        font-size: var(--InputLFS);
+    }
+
+    button{
+        top: 1em;
+        left: calc(100% - 5em);
+        transform: none;
+        width: 70px;
+        height: 70px;
+    
+    }
+
+    .display-age{
+        font-size: var(--OutputFSmd);
+    }
+}
