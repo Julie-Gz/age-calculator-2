@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/html-css-javascript-D1UyuA_bHo)
-- Live Site URL: [Add live site URL here](https://julie-gz.github.io/age-calculator-2/)
+- Solution URL: [https://www.frontendmentor.io/solutions/html-css-javascript-D1UyuA_bHo]
+- Live Site URL: [https://julie-gz.github.io/age-calculator-2/]
 
 ## My process
 
